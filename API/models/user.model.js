@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    saltSecret: string
+    saltSecret: String
 });
     
-mongoose.model('User', userSchema);
+mongoose.model('User', userSchema)
