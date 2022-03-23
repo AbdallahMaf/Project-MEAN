@@ -4,15 +4,17 @@ const bcrypt = require('bcryptjs')
 const userSchema = new mongoose.Schema({
     fullName: {
         type: String,
-        required: true,
+        required: 'Full name can\'t be empty'
     },
     email: {
         type: String,
-        required: true,
+        required: 'Email can\'t be empty',
+        unique: true
     },
     password: {
         type: String,
-        required: true,
+        required: 'Password can\'t be empty',
+        minlength: [4, 'Password must be atleast 4 character long']
     },
     saltSecret: String
 });
@@ -28,4 +30,4 @@ userSchema.pre('save', function (next){
     });
 });
     
-mongoose.model('User', userSchema)
+module.exports = mongoose.model('User', userSchema);
