@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const rtsIndex = require('./routes/index.router');
-const { register } = require('./controllers/user.controller');
+
 
 var app = express();
 
@@ -23,7 +23,6 @@ app.use((err, req, res, next) => {
         res.status(422).send(valErrors)
     }
 });
-
 
 // start server
 app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));

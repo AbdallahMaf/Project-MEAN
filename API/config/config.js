@@ -1,5 +1,5 @@
 // check env.
-const env = process.env.NODE_ENV || 'development';
+var env = process.env.NODE_ENV || 'development';
 
 // fetch env. config
 var config = require('./config.json');
