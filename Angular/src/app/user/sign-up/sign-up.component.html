@@ -1,6 +1,21 @@
 <form #signUpForm="ngForm">
-  <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Nom Complet">
-  <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email">
-  <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Mot de Passe">
+  <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName"
+    placeholder="Premon & Nom" minlength="3" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
+  <div *ngIf="signUpForm.submitted && !fullName.valid">
+    <label class="validation-message">Ce champ est obligatoire.</label>
+  </div>
+  <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+  required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+  <div *ngIf="signUpForm.submitted && email.errors">
+    <label *ngIf="email.errors['required']" class="validation-message">Ce champ est obligatoire.</label>
+    <label *ngIf="email.errors['pattern']" class="validation-message">Adresse mail est invalide</label>
+  </div>
+  <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password"
+    placeholder="Mot de Passe"
+    minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+  <div *ngIf="signUpForm.submitted && password.errors">
+    <label *ngIf="password.errors['required']" class="validation-message">Ce champ est obligatoire.</label>
+    <label *ngIf="password.errors['minlength']" class="validation-message">Entrer au moins 4 caracteres.</label>
+  </div>
   <input type="submit" value="S'INCRIRE">
 </form>
