@@ -35,5 +35,11 @@ userSchema.pre('save', function (next){
         });
     });
 });
-    
+   
+
+//Methodes
+userSchema.methods.verifyPassword = function (passport){
+    return bcrypt.compareSync(password, this.password);
+};
+
 mongoose.model('User', userSchema);
