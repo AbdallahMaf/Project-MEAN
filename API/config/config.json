@@ -1,7 +1,7 @@
 {
     "development": {
         "PORT" : 3000,
-        "MONGODB_URI" : "mongodb://localhost:27017/PROJETMEANstackDB"
+        "MONGODB_URI" : "mongodb://localhost:27017/projetmeanstack"
     },
     "production" : {
         "PORT" : 80,
