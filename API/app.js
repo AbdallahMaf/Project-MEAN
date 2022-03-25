@@ -8,7 +8,7 @@ const cors = require('cors');
 const rtsIndex = require('./routes/index.router');
 
 
-var app = express();
+const app = express();
 
 //middleware
 app.use(bodyParser.json);
