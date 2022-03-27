@@ -31,3 +31,7 @@ module.exports.authenticate = (req, res, next) => {
         else return res.status(404).json(info);
     }) (req,res);
 }
+
+module.exports.userProfile = (req, res, next) => {
+    
+}
