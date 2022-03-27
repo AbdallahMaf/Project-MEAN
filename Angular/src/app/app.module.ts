@@ -11,6 +11,8 @@ import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 // Routes
 import { appRoutes } from './routes';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignInComponent } from './user/sign-in/sign-in.component';
 
 
 
@@ -18,7 +20,9 @@ import { appRoutes } from './routes';
   declarations: [
     AppComponent,
     UserComponent,
-    SignUpComponent
+    SignUpComponent,
+    UserProfileComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
