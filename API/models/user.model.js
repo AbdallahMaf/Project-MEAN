@@ -39,7 +39,7 @@ userSchema.pre('save', function (next){
    
 
 //Methodes
-userSchema.methods.verifyPassword = function (passport){
+userSchema.methods.verifyPassword = function (password){
     return bcrypt.compareSync(password, this.password);
 };
 
