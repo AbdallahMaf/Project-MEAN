@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { UserService } from '../../shared/user.service';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService, public router : Router) { }
+
+  model = {
+    email: '',
+    password: ''
+  };
+  emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  serverErrorMessages!: string;
 
   ngOnInit(): void {
   }
 
+  onSubmit(form : NgForm){
+    this.userService.login(form.value).subscribe(
+      res => {
+        this.userService.setToken('token');
+        this.router.navigateByUrl('/userprofile');
+      },
+      err => {
+        this.serverErrorMessages = err.error.message;
+      }
+    );
+  }
 }
