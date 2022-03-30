@@ -13,9 +13,6 @@ export class SignUpComponent implements OnInit {
   showSucessMessage!: boolean;
   serverErrorMessages!: string;
 
-
-
-
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
