@@ -14,18 +14,32 @@ export class UserService {
     password: ''
   };
 
+  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
+
   constructor(private http: HttpClient) { }
 
+
+    //HTTP Methods
     postUser(user: User){
-      return this.http.post(environment.apiBaseUrl+'/register',user);
+      return this.http.post(environment.apiBaseUrl+'/register', user, this.noAuthHeader);
     }
 
     login(authCredentials: any) {
-      return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials)
+      return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader)
     }
 
+    getUserProfile() {
+      return this.http.get(environment.apiBaseUrl + '/userProfile');
+    }
+
+
+    //Helper Methods
     setToken(token: string) {
       localStorage.setItem('token', token)
+    }
+
+    getToken() {
+      return localStorage.getItem('token');
     }
 
     deleteToken() {
@@ -33,7 +47,7 @@ export class UserService {
     }
 
     getUserPayload() {
-      var token = localStorage.getItem('token');
+      var token = this.getToken();
       if (token) {
         var userPayload = atob(token.split('.')[1]);
         return JSON.parse(userPayload);
