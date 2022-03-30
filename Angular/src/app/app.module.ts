@@ -14,6 +14,8 @@ import { appRoutes } from './routes';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
+// Others
+import { AuthGuard } from './auth/auth.guard';
 
 
 
@@ -32,7 +34,7 @@ import { UserService } from './shared/user.service';
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
