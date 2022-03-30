@@ -15,7 +15,7 @@ export const appRoutes: Routes = [
     children: [{ path: '', component: SignInComponent }]
   },
   {
-    path: 'userprofile', component: UserProfileComponent, canActivate: [AuthGuard]
+    path: 'userprofile', component: UserProfileComponent,canActivate:[AuthGuard]
   },
   {
     path: '', redirectTo: '/login', pathMatch: 'full'

@@ -5,12 +5,12 @@
   <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex"
     required [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
   <div *ngIf="signInForm.submitted && email.errors?.['pattern']">
-    <label class="validation-message">Invalid email address.</label>
+    <label class="validation-message">Adresse mail est invalide.</label>
   </div>
   <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password"
     required minlength="4" [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
   <div *ngIf="signInForm.submitted && password.errors?.['minlength']">
-    <label class="validation-message">Minimum 4 characters.</label>
+    <label class="validation-message">Entrer au moins 4 caracteres.</label>
   </div>
   <input type="submit" value="S'IDENTIFIER">
 </form>
