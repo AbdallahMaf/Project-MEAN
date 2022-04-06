@@ -13,10 +13,10 @@ passport.use(
                     return done(err);
                 //unknow user
                 else if(!user)    
-                    return done(null, false, { message: 'Email is not registered' });
+                    return done(null, false, { message: 'L\'Email n\'est pas enregistré' });
                 //wrong password
                 else if(!user.verifyPassword(password))
-                    return done(null, false, { message: 'Wrong password.' });
+                    return done(null, false, { message: 'Mot de Passe incorrect.' });
                 // authentification succeeded
                 else
                     return done(null, user);
