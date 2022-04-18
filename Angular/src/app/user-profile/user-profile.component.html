@@ -1,26 +1,930 @@
-<table *ngIf="userDetails" class="table-fill">
-  <thead>
-    <tr>
-      <th colspan="2" class="text-center">Profile Utilisateur</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Prenom</td>
-      <td>{{userDetails.fullName.split('-')}}</td>
-    </tr>
-    <!-- <tr>
-      <td>Nom</td>
-      <td>{{userDetails.fullName.split(' ')[1]}}</td>
-    </tr> -->
-    <tr>
-      <td>Email</td>
-      <td>{{userDetails.email.split(' ')}}</td>
-    </tr>
-    <tr>
-      <td colspan="2" class="text-center">
-        <input type="button" (click)="onLogout()" value="DECONNEXION">
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div id="page" class="section">
+  <!-- Header Section Start -->
+  <div class="header-section header-transparent sticky-header section">
+      <div class="header-inner">
+          <div class="container position-relative">
+              <div class="row justify-content-between align-items-center">
+
+                  <!-- Header Logo Start -->
+                  <div class="col-xl-2 col-auto order-0">
+                      <div class="header-logo">
+                          <a href="index.html">
+                              <img class="dark-logo" src="assets/images/logo/light-logo.png" alt="Agency Logo">
+                              <img class="light-logo" src="assets/images/logo/light-logo.png" alt="Agency Logo">
+                          </a>
+                      </div>
+                  </div>
+                  <!-- Header Logo End -->
+
+                  <!-- Header Main Menu Start -->
+                  <div
+                      class="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">
+                      <div class="menu-column-area d-none d-xl-block position-static">
+                          <nav class="site-main-menu">
+                              <ul>
+                                  <li>
+                                      <a class="active" href="index.html"><span
+                                              class="menu-text">Accueil</span></a>
+                                  </li>
+                                  <li class="has-children">
+                                      <a href="#"><span class="menu-text">Formations</span></a>
+                                      <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                      <ul class="sub-menu">
+                                          <li><a href="#"><span class="menu-text">Formations initiales</span></a></li>
+                                          <li><a href="#"><span class="menu-text">Formations Certifiantes</span></a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="menu-text">Certifications</span></a>
+                                  <li>
+                                      <a href="#"><span class="menu-text">Actualites</span></a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="menu-text">A Propos</span></a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="menu-text">Nous Contacter</span></a>
+                                  </li>
+                              </ul>
+                          </nav>
+                      </div>
+                      <!-- Header Search Start -->
+                      <div class="header-search-area ml-xl-7 ml-0">
+
+                          <!-- Header Login Start -->
+                          <div class="header-search">
+                              <a href="javascript:void(0)" class="header-search-toggle"><i
+                                      class="pe-7s-search pe-2x pe-va"></i></a>
+                          </div>
+                          <!-- Header Login End -->
+                      </div>
+                      <!-- Header Search End -->
+
+                      <!-- Header Mobile Menu Toggle Start -->
+                      <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">
+                          <button class="toggle">
+                              <i class="icon-top"></i>
+                              <i class="icon-middle"></i>
+                              <i class="icon-bottom"></i>
+                          </button>
+                      </div>
+                      <!-- Header Mobile Menu Toggle End -->
+                  </div>
+                  <!-- Header Main Menu End -->
+
+                  <!-- Header Right Start -->
+                  <div class="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
+                      <a href="#" class="btn btn-light btn-hover-primary">Mon Compte</a>
+                  </div>
+                  <!-- Header Right End -->
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Header Section End -->
+
+  <!-- Main Search Start -->
+  <div class="main-search-active">
+      <div class="sidebar-search-icon">
+          <button class="search-close"><i class="pe-7s-close"></i></button>
+      </div>
+      <div class="sidebar-search-input">
+          <form action="#">
+              <div class="form-search">
+                  <input id="search" class="input-text" value="" placeholder="" type="search">
+                  <button>
+                      <i class="fa fa-search"></i>
+                  </button>
+              </div>
+          </form>
+          <p class="form-description">Hit enter to search or ESC to close</p>
+      </div>
+  </div>
+  <!-- Main Search End -->
+
+  <!-- Slider/Intro Section Start -->
+  <div class="intro-slider-wrap section">
+      <div class="intro-slider swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/hero4.jpg">
+
+                      <div class="container">
+                          <div class="row row-cols-lg-1 row-cols-1">
+
+                              <div class="col align-self-center">
+                                  <div class="intro-content mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-8">
+                                      <h2 class="title">Ecole Des Ingenieurs En Informatique</h2>
+                                      <div class="desc">
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                              Eveniet amet ipsum laudantium voluptatem neque, deserunt debitis fugiat ipsam. Quibusdam in inventore
+                                              minima similique quo aliquid dignissimos quae dolores dolore eos?</p>
+                                      </div>
+                                      <a href="#" class="btn btn-primary btn-hover-secondary">Continuer</a>
+                                      <a href="#" class="btn btn-outline-white btn-hover-primary">En savoir plus</a>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/network-switch-ethernet.jpg">
+
+                      <div class="container">
+                          <div class="row row-cols-lg-1 row-cols-1">
+
+                              <!-- Intro One Content Start -->
+                              <div class="col align-self-center">
+                                  <div class="intro-content mt-8">
+                                      <h2 class="title">Ecole Des Ingenieurs En Informatique </h2>
+                                      <div class="desc">
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                              Nemo consequatur, non nam magnam delectus tenetur molestiae repellat iste vel tempora sapiente aliquid!
+                                              Veniam nulla numquam repudiandae animi, quidem cupiditate asperiores!</p>
+                                      </div>
+                                      <a href="course-details-free.html"
+                                          class="btn btn-primary btn-hover-secondary">Continuer</a>
+                                      <a href="#" class="btn btn-outline-white btn-hover-primary">En savoir plus</a>
+                                  </div>
+                              </div>
+                              <!-- Intro One Content End -->
+
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/hero5.jpg">
+
+                      <div class="container">
+                          <div class="row row-cols-lg-1 row-cols-1">
+
+                              <!-- Intro One Content Start -->
+                              <div class="col align-self-center max-mb-30">
+                                  <div class="intro-content mt-8">
+                                      <h2 class="title">Ecole Des Ingenieurs En Informatique </h2>
+                                      <div class="desc">
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                              Molestias blanditiis excepturi soluta, a vitae quia illo dolor voluptate dicta eos cupiditate incidunt commodi!
+                                              Facere laborum saepe aliquam iusto, facilis quo.</p>
+                                      </div>
+                                      <a href="course-details-free.html"
+                                          class="btn btn-primary btn-hover-secondary">Continuer</a>
+                                      <a href="#" class="btn btn-outline-white btn-hover-primary"> En savoir plus </a>
+                                  </div>
+                              </div>
+                              <!-- Intro One Content End -->
+
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="home-slider-prev swiper-button-prev main-slider-nav"><i class="fal fa-angle-left"></i></div>
+          <div class="home-slider-next swiper-button-next main-slider-nav"><i class="fal fa-angle-right"></i>
+          </div>
+      </div>
+  </div>
+  <!-- Slider/Intro Section End -->
+
+  <!-- About Section Start -->
+  <div class="section section-padding-t90 section-padding-bottom-190">
+      <div class="container">
+
+          <!-- Section Title Start -->
+          <div class="section-title text-center" data-aos="fade-up">
+              <h2 class="title">L'ecole des Ingenieurs en Informatique du futur</h2>
+              <p class="sub-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At.
+                  <br> Lorem ipsum dolor sit amet consectetur.
+              </p>
+          </div>
+          <!-- Section Title End -->
+
+          <!-- About Wrapper Start -->
+          <div class="row">
+
+              <!-- About Image Area Start -->
+              <div class="col-xl-7 col-lg-6 col-12" data-aos="fade-up">
+                  <div class="about-image-area">
+                      <div class="about-image js-tilt">
+                          <img src="assets/images/about/home-one-about/home_agency_about_1.jpg" alt="">
+                      </div>
+
+                      <!-- Animation Shape Start -->
+                      <div class="shape shape-1 scene">
+                          <span data-depth="1"><img src="assets/images/shape-animation/about-shape-1.png"
+                                  alt=""></span>
+                      </div>
+                      <!-- Animation Shape End -->
+                  </div>
+              </div>
+              <!-- About Image Area Start -->
+
+              <!-- About Start -->
+              <div class="col-xl-5 col-lg-6 col-12" data-aos="fade-up">
+                  <!-- About Content Area Start -->
+                  <div class="about-content-area">
+                      <!-- Section Title Two Start -->
+                      <div class="section-title-two">
+                          <span class="sub-title">Toujours apprendre pour etre parmi les meilleurs</span>
+                          <h3 class="title">Lorem ipsum dolor sit amet consectetur.</h3>
+                      </div>
+                      <!-- Section Title Two End -->
+
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          Repudiandae accusamus autem maiores ab assumenda eligendi provident!</p>
+
+                      <a class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" href="#">Savoir Plus</a>
+                  </div>
+                  <!-- About Content Area Start -->
+              </div>
+              <!-- About Start -->
+
+          </div>
+          <!-- About Wrapper End -->
+
+      </div>
+  </div>
+  <!-- About Section End -->
+
+  <!-- Skill With Video Section Start -->
+  <div class="section section-padding" data-bg-color="#f8faff">
+
+      <div class="container">
+
+          <div class="row">
+
+              <div class="col-xl-5 col-lg-6 col-12" data-aos="fade-up">
+                  <!-- Skill With Video Content Start -->
+                  <div class="skill-with-video-content">
+                      <!-- Section Title Two Start -->
+                      <div class="section-title-two mb-8">
+                          <span class="sub-title">Lorem ipsum dolor sit amet consectetur</span>
+                          <h3 class="title">Lorem ipsum dolor, sit amet consectetur adipisicing elit</h3>
+                      </div>
+                      <!-- Section Title Two End -->
+
+                      <!-- Agency List Start -->
+                      <ul class="agency-list">
+                          <li class="item">
+                              <div class="icon">
+                                  <i class="fas fa-check"></i>
+                              </div>
+                              <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing</div>
+                          </li>
+                          <li class="item">
+                              <div class="icon">
+                                  <i class="fas fa-check"></i>
+                              </div>
+                              <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing</div>
+                          </li>
+                          <li class="item">
+                              <div class="icon">
+                                  <i class="fas fa-check"></i>
+                              </div>
+                              <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing</div>
+                          </li>
+                          <li class="item">
+                              <div class="icon">
+                                  <i class="fas fa-check"></i>
+                              </div>
+                              <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing</div>
+                          </li>
+                      </ul>
+                      <!-- Agency List End -->
+                  </div>
+                  <!-- Skill With Video Content End -->
+              </div>
+
+              <div class="offset-xl-1 col-xl-6 col-lg-6 col-12" data-aos="fade-up">
+                  <!-- Skill With Video Popup Start -->
+                  <div class="video-popup-area">
+                      <!-- Video Popup Start -->
+                      <div class="skill-video" data-aos="fade-up">
+                          <img class="image" src="assets/images/video/tech.jpg" alt="video popup">
+                          <a href="https://www.youtube.com/watch?v=eS9Qm4AOOBY" class="icon video-popup"><i
+                                  class="fas fa-play"></i></a>
+                      </div>
+                      <!-- Video Popup End -->
+
+                      <!-- Animation Shape Start -->
+                      <div class="shape shape-1 scene">
+                          <span data-depth="1">
+                              <img src="assets/images/shape-animation/video-shape-1.png" alt="">
+                          </span>
+                      </div>
+                      <!-- Animation Shape End -->
+                  </div>
+                  <!-- Skill With Video Popup End -->
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+  <!-- Skill With Video Section End -->
+
+  <!-- Service Section Start -->
+  <div class="section section-padding-t90-b100">
+      <div class="container">
+
+          <!-- Section Title Start -->
+          <div class="section-title text-center mb-12" data-aos="fade-up">
+              <h2 class="title fz-32">Formations & Certififications</h2>
+              <p class="sub-title">Get your company heading in the right direction with our digital
+                  <br> marketing strategist
+              </p>
+          </div>
+          <!-- Section Title End -->
+
+          <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+
+              <!-- Icon Box Start -->
+              <div class="col mb-6" data-aos="fade-up">
+
+                  <div class="icon-box text-center" data-vivus-hover>
+                      <div class="icon"><img class="svgInject"
+                              src="assets/images/svg/linea/linea-basic-webpage-multiple.svg" alt=""></div>
+                      <div class="content">
+                          <h3 class="title">Developpement Web</h3>
+                          <div class="desc">
+                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, eius.</p>
+                          </div>
+                          <a href="#" class="link">Savoir Plus</a>
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="col mb-6" data-aos="fade-up">
+
+                  <div class="icon-box text-center" data-vivus-hover>
+                      <div class="icon"><img class="svgInject"
+                              src="assets/images/svg/linea/linea-basic-webpage.svg" alt=""></div>
+                      <div class="content">
+                          <h3 class="title">Developpement Mobile</h3>
+                          <div class="desc">
+                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, eius.</p>
+                          </div>
+                          <a href="#" class="link">Savoir Plus</a>
+                      </div>
+                  </div>
+
+              </div>
+              <!-- Icon Box End -->
+
+              <!-- Icon Box Start -->
+              <div class="col mb-6" data-aos="fade-up">
+
+                  <div class="icon-box text-center" data-vivus-hover>
+                      <div class="icon"><img class="svgInject"
+                              src="assets/images/svg/linea/linea-basic-world.svg" alt=""></div>
+                      <div class="content">
+                          <h3 class="title">Reseau Informatique</h3>
+                          <div class="desc">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                  Lorem ipsum dolor sit amet. Ea, natus?</p>
+                          </div>
+                          <a href="#" class="link">Savoir Plus</a>
+                      </div>
+                  </div>
+
+              </div>
+              <!-- Icon Box End -->
+
+              <!-- Icon Box Start -->
+              <div class="col mb-6" data-aos="fade-up">
+
+                  <div class="icon-box text-center" data-vivus-hover>
+                      <div class="icon"><img class="svgInject"
+                              src="assets/images/svg/linea/linea-basic-server2.svg" alt=""></div>
+                      <div class="content">
+                          <h3 class="title">Base de Donnees</h3>
+                          <div class="desc">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                  Similique officia magnam eligendi.</p>
+                          </div>
+                          <a href="#" class="link">Savoir Plus</a>
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="col mb-6" data-aos="fade-up">
+
+                  <div class="icon-box text-center" data-vivus-hover>
+                      <div class="icon"><img class="svgInject"
+                              src="assets/images/svg/linea/linea-basic-cloud.svg" alt=""></div>
+                      <div class="content">
+                          <h3 class="title">Cloud</h3>
+                          <div class="desc">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                  Similique officia magnam eligendi.</p>
+                          </div>
+                          <a href="#" class="link">Savoir Plus</a>
+                      </div>
+                  </div>
+
+              </div>
+
+
+              <div class="col mb-6" data-aos="fade-up">
+
+                  <div class="icon-box text-center" data-vivus-hover>
+                      <div class="icon"><img class="svgInject"
+                              src="assets/images/svg/linea/linea-arrows-circle-upright.svg" alt=""></div>
+                      <div class="content">
+                          <h3 class="title">Securite Informatique</h3>
+                          <div class="desc">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                  Similique officia magnam eligendi.</p>
+                          </div>
+                          <a href="#" class="link">Savoir Plus</a>
+                      </div>
+                  </div>
+
+              </div>
+
+
+              <!-- Icon Box End -->
+
+          </div>
+
+      </div>
+  </div>
+  <!-- Service Section End -->
+
+  <!-- Success Section Start -->
+  <div class="section section-padding-top section-padding-bottom-200" data-bg-color="#f8faff">
+      <div class="container">
+          <div class="row">
+              <!-- Success Content Start -->
+              <div class="col-lg-5" data-aos="fade-up">
+                  <div class="success-content">
+                      <!-- Section Title Two Start -->
+                      <div class="section-title-two mb-lg-8 mb-6">
+                          <span class="sub-title">Your success is our success</span>
+                          <h3 class="title">Web design, marketing & SEO solutions that get results</h3>
+                      </div>
+                      <!-- Section Title Two End -->
+
+                      <p class="mb-0">Increase visibility to increase profits. We help our clients increase
+                          profits by increasing their visibility online. If your clients can’t find you, your
+                          website is useless.</p>
+
+                      <a class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" href="#">Demarrer</a>
+                  </div>
+
+              </div>
+              <!-- Success Content End -->
+
+              <!-- Success Image Start -->
+              <div class="offset-lg-1 col-lg-6" data-aos="fade-up">
+                  <div class="success-image-wrap">
+                      <div class="success-image js-tilt">
+                          <img src="assets/images/success/Developpeurs.jpg" alt="success-1">
+                      </div>
+                      <!-- Animation Shape Start -->
+                      <div class="shape shape-1 scene">
+                          <span data-depth="1"><img src="assets/images/shape-animation/video-shape-1.png"
+                                  alt="shape"></span>
+                      </div>
+                      <!-- Animation Shape End -->
+                  </div>
+              </div>
+              <!-- Success Image End -->
+          </div>
+      </div>
+  </div>
+  <!-- Success Section End -->
+
+  <!-- Portfolio Section Start -->
+  <div class="section section-padding-t90 ag-masonary-wrapper">
+      <div class="container-fluid px-0">
+          <!-- Section Title Start -->
+          <div class="section-title text-center" data-aos="fade-up">
+              <h2 class="title fz-32">Great brands deserve even greater creative works</h2>
+          </div>
+          <!-- Section Title End -->
+
+          <!-- Portfolio Menu Start -->
+          <div class="messonry-button text-center mb-lg-13 mb-md-13 mb-6" data-aos="fade-up">
+              <button data-filter="*" class="is-checked"><span class="filter-text">Tous</span></button>
+              <button data-filter=".cat-1"><span class="filter-text">Web</span></button>
+              <button data-filter=".cat-2"><span class="filter-text">Mobile</span></button>
+              <button data-filter=".cat-3"><span class="filter-text">Reseau</span> </button>
+              <button data-filter=".cat-4"><span class="filter-text">Data</span></button>
+              <button data-filter=".cat-5"><span class="filter-text">Securite</span></button>
+          </div>
+          <!-- Portfolio Menu End -->
+
+          <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 g-0 mesonry-list">
+              <div class="resizer col"></div>
+              <!-- Single Portfolio Start -->
+              <div class="col cat-1 ">
+                  <div class="single-portfolio">
+                      <div class="thumbnail">
+                          <img class="img-fluid" src="assets/images/portfolio/portfolio-4.jpg" alt="Portfolio-01">
+                      </div>
+                      <div class="content">
+                          <h5 class="title"><a href="#"><img
+                                      src="assets/images/icons/arrow-up-right.svg" alt=""></a></h5>
+                      </div>
+                  </div>
+              </div>
+              <!-- Single Portfolio End -->
+              <!-- Single Portfolio Start -->
+              <div class="col cat-2">
+                  <div class="single-portfolio">
+                      <div class="thumbnail">
+                          <img class="img-fluid" src="assets/images/portfolio/portfolio-1.jpg" alt="Portfolio-01">
+                      </div>
+                      <div class="content">
+                          <h5 class="title"><a href="#"><img
+                                      src="assets/images/icons/arrow-up-right.svg" alt=""></a></h5>
+                      </div>
+                  </div>
+              </div>
+              <!-- Single Portfolio End -->
+              <!-- Single Portfolio Start -->
+              <div class="col cat-5">
+                  <div class="single-portfolio">
+                      <div class="thumbnail">
+                          <img class="img-fluid" src="assets/images/portfolio/portfolio-3.jpg" alt="Portfolio-01">
+                      </div>
+                      <div class="content">
+                          <h5 class="title"><a href="#"><img
+                                      src="assets/images/icons/arrow-up-right.svg" alt=""></a></h5>
+                      </div>
+                  </div>
+              </div>
+              <!-- Single Portfolio End -->
+              <!-- Single Portfolio Start -->
+              <div class="col cat-3">
+                  <div class="single-portfolio">
+                      <div class="thumbnail">
+                          <img class="img-fluid" src="assets/images/portfolio/portfolio-2.jpg" alt="Portfolio-01">
+                      </div>
+                      <div class="content">
+                          <h5 class="title"><a href="#"><img
+                                      src="assets/images/icons/arrow-up-right.svg" alt=""></a></h5>
+                      </div>
+                  </div>
+              </div>
+              <!-- Single Portfolio End -->
+              <!-- Single Portfolio Start -->
+              <div class="col cat-4">
+                  <div class="single-portfolio">
+                      <div class="thumbnail">
+                          <img class="img-fluid" src="assets/images/portfolio/portfolio-5.jpg" alt="Portfolio-01">
+                      </div>
+                      <div class="content">
+                          <h5 class="title"><a href="#"><img
+                                      src="assets/images/icons/arrow-up-right.svg" alt=""></a></h5>
+                      </div>
+                  </div>
+              </div>
+              <!-- Single Portfolio End -->
+              <!-- Single Portfolio Start -->
+              <div class="col cat-3 ">
+                  <div class="single-portfolio">
+                      <div class="thumbnail">
+                          <img class="img-fluid" src="assets/images/portfolio/portfolio-6.jpg" alt="Portfolio-01">
+                      </div>
+                      <div class="content">
+                          <h5 class="title"><a href="#"><img
+                                      src="assets/images/icons/arrow-up-right.svg" alt=""></a></h5>
+                      </div>
+                  </div>
+              </div>
+              <!-- Single Portfolio End -->
+          </div>
+      </div>
+  </div>
+  <!-- Portfolio Section End -->
+
+  <!-- Blog Section Start -->
+
+  <!-- Blog Section End -->
+
+  <!-- Newsletter Section Start -->
+  <div class="section section-padding-t110-b120 newsletter-section mt-8" data-overlay="0.7"
+      data-bg-image="assets/images/bg/start-up-afrik.jpg">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-8">
+                  <!-- Newsletter Content Start -->
+                  <div class="newsletter-content mb-lg-0 mb-6">
+                      <!-- Section Title Start -->
+                      <div class="section-title color-light text-left mb-0" data-aos="fade-up">
+                          <h2 class="title">Let’s find out how to work together</h2>
+                          <p class="sub-title fz-18 ml-0">Ready to start your project? The contact information
+                              collected through <br>
+                              this form will only be used to send a response to your inquiry.</p>
+                      </div>
+                      <!-- Section Title End -->
+                  </div>
+                  <!-- Newsletter Content End -->
+              </div>
+              <div class="col-lg-4">
+                  <!-- Newsletter Form Start -->
+                  <div class="newsletter-form ml-xl-7 ml-lg-0" data-aos="fade-up">
+                      <form action="#">
+                          <input type="email" placeholder="Entrer votre email" name="mail">
+                          <button class="subscribe-btn"><i class="fas fa-paper-plane"></i></button>
+                      </form>
+                  </div>
+                  <!-- Newsletter Form End -->
+              </div>
+          </div>
+      </div>
+
+      <!-- Animation Shape Start -->
+      <div class="shape shape-1 scene">
+          <span data-depth="1">
+              <img src="assets/images/shape-animation/newsletter-shape.png" alt="">
+          </span>
+      </div>
+      <!-- Animation Shape End -->
+  </div>
+  <!-- Newsletter Section End -->
+
+  <!-- Contact Information Section Start -->
+  <div class="section section-padding-t90-b100">
+      <div class="container shape-animate">
+          <!-- Section Title Start -->
+          <div class="section-title text-center mb-lg-12 mb-sm-8 mb-xs-8" data-aos="fade-up">
+              <h2 class="title fz-32">Contact us today, let’s get to know each other</h2>
+              <p class="sub-title">We are ready to answer all your questions! When you partner with us,
+                  <br> you get more than a contract. We are committed to your success
+              </p>
+          </div>
+          <!-- Section Title End -->
+
+          <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+              <div class="col mb-6" data-aos="fade-up">
+                  <!-- Contact Information Start -->
+                  <div class="contact-info" data-vivus-hover>
+                      <div class="icon">
+                          <img class="svgInject" src="assets/images/svg/linea/linea-basic-geolocalize-01.svg" alt="">
+                      </div>
+                      <div class="info">
+                          <h4 class="title">Localisation</h4>
+                          <span class="info-text"> 110 W 34th Fann, Dakar. <br>
+                              Corniche Ouest</span>
+                      </div>
+                  </div>
+                  <!-- Contact Information End -->
+              </div>
+              <div class="col mb-6" data-aos="fade-up">
+                  <!-- Contact Information Start -->
+                  <div class="contact-info" data-vivus-hover>
+                      <div class="icon">
+                          <img class="svgInject" src="assets/images/svg/linea/linea-basic-message-txt.svg" alt="">
+                      </div>
+                      <div class="info">
+                          <h4 class="title">Contact</h4>
+                          <span class="info-text"> (+221) 77 773 66 98<br>
+                              (+221) 77 680 45 64</span>
+                      </div>
+                  </div>
+                  <!-- Contact Information End -->
+              </div>
+              <div class="col mb-6" data-aos="fade-up">
+                  <!-- Contact Information Start -->
+                  <div class="contact-info" data-vivus-hover>
+                      <div class="icon">
+                          <img class="svgInject" src="assets/images/svg/linea/linea-basic-mail-open-text.svg"
+                              alt="">
+                      </div>
+                      <div class="info">
+                          <h4 class="title"> Nos mail</h4>
+                          <span class="info-text">
+                              <a href="#">abdallahfall2020@gmail.com</a>
+                              <br>
+                              <a href="#">sada2553@gmail.com</a>
+                          </span>
+                      </div>
+                  </div>
+                  <!-- Contact Information End -->
+              </div>
+          </div>
+
+          <!-- Animation Shape Start -->
+          <div class="shape shape-1 scene">
+              <span data-depth="4"><img src="assets/images/shape-animation/video-shape-1.png" alt="shape"></span>
+          </div>
+          <!-- Animation Shape End -->
+
+      </div>
+  </div>
+  <!-- Contact Information Section End -->
+
+  <div class="footer-section section" data-bg-color="#030e22">
+      <div class="container">
+
+          <!-- Footer Top Widgets Start -->
+          <div class="row mb-lg-14 mb-md-10 mb-6">
+
+              <!-- Footer Widget Start -->
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 col-12 mb-6">
+                  <div class="footer-widget">
+                      <div class="footer-logo">
+                          <a href="index.html"><img src="assets/images/logo/footer-logo.png"
+                                  alt="Agency Logo"></a>
+                      </div>
+                      <div class="footer-widget-content">
+                          <div class="content">
+
+
+                              <p><a href="#">(+221) 33 951 35 48</a></p>
+                              <p><a href="#">www.agency.com</a> </p>
+                          </div>
+                          <div class="footer-social-inline">
+                              <a href="#"><i class="fab fa-twitter-square"></i></a>
+                              <a href="#"><i class="fab fa-facebook-square"></i></a>
+                              <a href="#"><i class="fab fa-instagram"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Footer Widget End -->
+
+              <!-- Footer Widget Start -->
+              <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-6">
+                  <div class="footer-widget">
+                      <h4 class="footer-widget-title">Services</h4>
+                      <div class="footer-widget-content">
+                          <ul>
+                              <li><a href="#">Development web</a></li>
+                              <li><a href="#">Development mobile</a></li>
+                              <li><a href="#">Reseau Informatique</a></li>
+                              <li><a href="#">Base de Donnees</a></li>
+                              <li><a href="#">Cloud</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <!-- Footer Widget End -->
+
+              <!-- Footer Widget Start -->
+              <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
+                  <div class="footer-widget">
+                      <h4 class="footer-widget-title">Products</h4>
+                      <div class="footer-widget-content">
+                          <ul>
+                              <li><a href="#">Elementor Guru</a></li>
+                              <li><a href="#">WooLentor Pro</a></li>
+                              <li><a href="#">Plugins <span class="ft-badge">New</span></a></li>
+                              <li><a href="#">Page Builder</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <!-- Footer Widget End -->
+
+              <!-- Footer Widget Start -->
+              <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
+                  <div class="footer-widget">
+                      <h4 class="footer-widget-title">About</h4>
+                      <div class="footer-widget-content">
+                          <ul>
+                              <li><a href="#">Features</a></li>
+                              <li><a href="#">Our Partners</a></li>
+                              <li><a href="#">Affiliate Program</a></li>
+                              <li><a href="#">Pricing</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <!-- Footer Widget End -->
+
+              <!-- Footer Widget Start -->
+              <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
+                  <div class="footer-widget">
+                      <h4 class="footer-widget-title">Contact</h4>
+                      <div class="footer-widget-content">
+                          <ul>
+                              <li><a href="#">Support Ticket</a></li>
+                              <li><a href="#">Help Desk</a></li>
+                              <li><a href="#">Live Chat</a></li>
+                              <li><a href="#">FAQs</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <!-- Footer Widget End -->
+
+          </div>
+          <!-- Footer Top Widgets End -->
+
+          <!-- Footer Copyright Start -->
+          <div class="row">
+              <div class="col">
+                  <p class="copyright">© 2022 <strong>BY Mohamed A. FALL & Sada SOW💻😀. Tous droits reserves</strong>.</p>
+              </div>
+          </div>
+          <!-- Footer Copyright End -->
+
+      </div>
+  </div>
+
+  <!-- Scroll Top Start -->
+  <a href="#" class="scroll-top" id="scroll-top">
+      <i class="arrow-top fal fa-long-arrow-up"></i>
+      <i class="arrow-bottom fal fa-long-arrow-up"></i>
+  </a>
+  <!-- Scroll Top End -->
+</div>
+
+<div id="site-main-mobile-menu" class="site-main-mobile-menu">
+  <div class="site-main-mobile-menu-inner">
+      <div class="mobile-menu-header">
+          <div class="mobile-menu-logo">
+              <a href="index.html"><img src="assets/images/logo/light-logo.png" alt=""></a>
+          </div>
+          <div class="mobile-menu-close">
+              <button class="toggle">
+                  <i class="icon-top"></i>
+                  <i class="icon-bottom"></i>
+              </button>
+          </div>
+      </div>
+      <div class="mobile-menu-content">
+          <nav class="site-mobile-menu">
+              <ul>
+                  <li>
+                      <a href="index.html"><span class="menu-text">Homepage</span></a>
+                  </li>
+                  <li>
+                      <a href="about.html"><span class="menu-text">About Us</span></a>
+                  </li>
+                  <li>
+                      <a href="service.html"><span class="menu-text">Services</span></a>
+                  </li>
+                  <li class="has-children">
+                      <a href="work.html"><span class="menu-text">Work</span></a>
+                      <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                      <ul class="sub-menu">
+                          <li><a href="work.html"><span class="menu-text">Work</span></a></li>
+                          <li><a href="work-details.html"><span class="menu-text">Work Details</span></a></li>
+                      </ul>
+                  </li>
+                  <li class="has-children">
+                      <a href="#"><span class="menu-text">Blog</span></a>
+                      <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                      <ul class="sub-menu">
+                          <li><a href="blog-classic.html"><span class="menu-text">Blog Classic</span></a></li>
+                          <li><a href="blog-details.html"><span class="menu-text">Blog Details</span></a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table *ngIf="userDetails" class="table-fill">
+    <thead>
+      <tr>
+        <th colspan="2" class="text-center">Profile Utilisateur</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prenom</td>
+        <td>{{userDetails.fullName.split('-')}}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{userDetails.email.split(' ')}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="text-center">
+          <input type="button" (click)="onLogout()" value="DECONNEXION">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ -->
